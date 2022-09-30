@@ -489,3 +489,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 .user__info > small {
   color: #666;
 }
+
+.tab { 
+	margin-left: 40px; 
+}
