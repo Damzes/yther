@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Ricci</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Favicons
+    ================================================== -->
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+
+<!-- Stylesheet
+    ================================================== -->
+<link rel="stylesheet" type="text/css"  href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
+<link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!-- Header -->
+<header id="header">
+  <div class="intro">
+    <div class="container">
+      <div class="row">
+        <div class="intro-text">
+          <h1>Ricci</h1>
+          <hr>
+          <p>Cybersecurity • Programming • Gaming</p> </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Navigation -->
+<div id="nav">
+  <nav class="navbar navbar-custom">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
+      </div>
+      
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-main-collapse">
+        <ul class="nav navbar-nav">
+          <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+          <li class="hidden"> <a href="#page-top"></a> </li>
+          <li> <a class="page-scroll" href="index.html">Home</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- About Section -->
+<div id="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>Website Wordpress di Ubuntu server dengan Database yang terpisah</h2>
+    </div>
+    <div class="row">
+      <div>
+        <div class="about-text">
+          <h4>Topologi</h4>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/0.png" class="img-responsive"></div>
+          <h3>Web Server</h3>
+          <h4>Step 1. Menginstall Apache2 pada Web Server</h4>
+          <p>Apache tersedia dalam repositori perangkat lunak default Ubuntu, sehingga memungkinkan untuk menginstalnya menggunakan tools package management konvensional.</p>
+          <p>Kita mulai dengan mengupdate package index server kita dengan:</p>
+          <p>$ sudo apt update</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/1.png" class="img-responsive"></div>
+          <p>Dilanjutkan dengan menggunakan apt install untuk menginstall Apache2:</p>
+          <p>$ sudo apt install apache2</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/2.png" class="img-responsive"></div>
+          <p>Konfirmasi instalasi dengan ketik ‘y’ lalu enter, apt akan lanjut menginstall apache dan keperluan yang dibutuhkan.</p>
+          <p>Untuk konfirmasi apakah apache2 berhasil diinstal pada server pakai perintah:</p>
+          <p>$ sudo systemctl status apache2</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/3.png" class="img-responsive"></div>
+          <p>Seperti yang dikonfirmasi oleh output ini, dimana di baris Active dikembalikan ‘active (running)’ berarti layanan telah dimulai dengan sukses. Namun, cara terbaik untuk menguji ini adalah dengan membuka halaman default arahan dari Apache.</p>
+          <p>Menggunakan IP Address di network adapter bridged adapter:</p>
+          <p>Di Virtual box, arahkan mouse ke Devices -> Network lalu klik Network Settings.</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/4.png" class="img-responsive"></div>
+          <p>Ganti di isi dari ‘Attached to :’ menjadi bridged adapter dengan mengklik dan memilih bridge adapter.</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/5.png" class="img-responsive"></div>
+          <p>Kita dapat mengakses halaman arahan Apache default melalui alamat IP. Jika tidak tahu alamat IP server, kita bisa mendapatkannya dengan beberapa cara berbeda dari baris perintah.</p>
+          <p class="tab">$ ip a</p>
+          <p>Alamat IP akan dapat ditemukan di baris inet nomor 2. Atau bisa juga dengan:</p>
+          <p class="tab">$ hostname –I</p>
+          <p>Akan dikembalikan beberapa alamat yang dipisahkan oleh spasi. Kita dapat mencoba masing-masing di browser web untuk menentukan apakah mereka berfungsi.</p>
+          <p>Saat anda telah menemukan IP address anda, masukkan IP tersebut ke browser anda:</p>
+          <p>http://server_ip/</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/6.png" class="img-responsive"></div>
+          <p>Selamat, apache2 berhasil diinstall di web server!</p>
+          <h4>Step 2. Menginstall mysql-client pada Web Server</h4>
+          <p>Program yang berinteraksi dengan server MySQL dikenal sebagai MySQL Client. Command-line toolsnya memungkinkan kita untuk berinteraksi dengan server dan juga untuk menjalankan perintah di shell scripts atau program lain.</p>
+          <p>Untuk menginstall mysql-client, jalankan perintah:</p>
+          <p class="tab">$ sudo apt install mysql-client</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/7.png" class="img-responsive"></div>
+          <p>Klik y dan enter, untuk melanjutkan instalasi.</p>
+          <h4>Step 3. Menginstall PHP pada Web Server</h4>
+          <p>Untuk menginstall package php dan php-mysql, jalankan:</p>
+          <p class="tab">$ sudo apt php php-mysql</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/8.png" class="img-responsive"></div>
+          <p>Saat diminta, ketik Y dan ENTER untuk mengonfirmasi pemasangan.</p>
+          <p>Untuk mengonfirmasi php telah terinstall, buat file info.php ke /var/www/html/ dengan perintah:</p>
+          <p class="tab">$ sudo nano /var/www/html/info.php</p>
+          <p>Kemudian masukkan teks yang seperti kedalam file tersebut:</p>
+          <p class="tab">&lt;?php</p>
+          <p class="tab">phpinfo();</p>
+          <p class="tab">?></p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/9.png" class="img-responsive"></div>
+          <p>Untuk menyimpan, klik CTRL + O lalu ENTER dan keluar dengan CTRL + X.</p>
+          <p>Kunjungi URL ip address server anda diikuti dengan /info.php:</p>
+          <p class="tab">http://ip_address/info.php</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/10.png" class="img-responsive"></div>
+          <p>PHP berhasil diinstall di server! Kita akan melihat halaman web yang berisi informasi rinci tentang servernya. Setelah memeriksa informasi yang relevan tentang server PHP melalui halaman itu, baik untuk menghapus info.php tadi karena berisi informasi sensitif tentang lingkungan PHP dan server Ubuntu yang dipakai. Kita dapat menggunakan rm untuk menghapus file itu:</p>
+          <p class="tab">$ sudo rm /var/www/html/info.php</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/11.png" class="img-responsive"></div>
+          <h3>Database Server</h3>
+          <h4>Step 1. Instalasi mysql-server di Database Server</h4>
+          <p>Kita mulai dengan mengupdate package index server kita dengan:</p>
+          <p class="tab">$ sudo apt update</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/12.png" class="img-responsive"></div>
+          <p>Lalu install package mysql-server:</p>
+          <p class="tab">$ sudo apt install mysql-server</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/13.png" class="img-responsive"></div>
+          <p>Saat diminta klik Y dan ENTER. </p>
+          <h4>Step 2. Mengedit konfigurasi di mysql</h4>
+          <p>Kita dapat mengubah konfigurasi mysql server di file mysqld.cnf yang berada di direktori /etc/mysql/mysql.conf.d/. Kita akan membuka file ini dengan (sebelumnya siapkan alamat ip server database) :</p>
+          <p class="tab">$ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf</p>
+          <p>Temukan parameter bind-address, ini memberi tahu perangkat lunak basis data di alamat jaringan mana untuk mendengarkan koneksi. Ubah nilai parameter bind-address menjadi ip address database server.</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/14.png" class="img-responsive"></div>
+          <p>Simpan dan tutup dengan menekan CTRL + X, Y, lalu ENTER.</p>
+          <p>Untuk mengupdate konfigurasi, restart databasenya:</p>
+          <p class="tab">$ sudo systemctl restart mysql</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/15.png" class="img-responsive"></div>
+          <h4>Step 3. Membuat user untuk web server agar dapat mengakses database server</h4>
+          <p>Mulai dengan menghubungkan ke MySQL sebagai pengguna root MySQL:</p>
+          <p class="tab">$ sudo mysql</p>
+          <p>Untuk membuat user untuk web server, kita harus menyiapkan ip address web server yang akan kita gunakan.</p>
+          <p class="tab">$ CREATE USER ‘nama_user’@’alamat_ip_webserver’ IDENTIFIED BY ‘password’</p>
+          <p>Kemudian berikan akun ini akses penuh database:</p>
+          <p class="tab">$ GRANT ALL PRIVILEGES ON *.* TO ‘nama_user’@’alamat_ip_webserver’;</p>
+          <p>User ini sekarang dapat melakukan operasi apa pun di semua database, dan yang terakhir flush privilegesnya agar MySQL mulai menggunakannya.</p>
+          <p class="tab">$ FLUSH PRIVILEGES;</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/16.png" class="img-responsive"></div>
+          <h4>Step 4. Test koneksi web server ke database server</h4>
+          <p>Masuk ke server web dan sambungkan ke server database menggunakan syntax berikut:</p>
+          <p class="tab">	$ mysql –u ‘nama_user’ –h ‘alamat_ip_dbserver’ –p</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/17.png" class="img-responsive"></div>
+          <p>Jika semuanya bekerja seperti yang diharapkan, kita akan berada di prompt MySQL. Verifikasi koneksi dengan menggunakan perintah:</p>
+          <p class="tab">mysql> mysql> \s</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/18.png" class="img-responsive"></div>
+          <p>Setelah memverifikasi bahwa Anda dapat terhubung dari web server, keluar dari prompt.</p>
+          <p class="tab">mysql> exit</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/19.png" class="img-responsive"></div>
+          <h4>Menguji Apache Web Server</h4>
+          <p>Membuat file koneksi pada web server</p>
+          <p class="tab">$ sudo nano /var/www/html/koneksidb.php</p>
+          <p>Lalu masukkan kode berikut:</p>
+          <p class="tab">&lt;?php <br>
+            <br>
+            // Konfigurasi Database <br>
+            <br>
+            $host       = '192.168.222.2'; // host<br>
+            $username   = 'userweb'; // username database<br>
+            $password   = 'userweb'; // password database<br>
+            $dbname     = 'db_testing'; // nama database<br>
+            <br>
+            $db = mysqli_connect($host, $username, $password, $dbname);<br>
+            <br>
+            if ($db) {<br>
+                echo "Database Terhubung";<br>
+            } else {<br>
+                echo "Database Error";<br>
+            }</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/20.png" class="img-responsive"></div>
+          <p>Simpan dan tutup dengan menekan CTRL + X, Y, lalu ENTER.</p>
+          <p>Uji coba di browser.</p>
+          <p>http://ip_address_webserver/koneksidb.php</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/21.png" class="img-responsive"></div>
+          <p>Mungkin anda akan menunggu sebentar tapi jika benar akan muncul halaman sukses.</p>
+          <h4>Membuat database wordpress di Database Server</h4>
+          <p>Kembali di Database server kita masuk ke mysql lagi dengan:</p>
+          <p class="tab">$ mysql –u root –p</p>
+          <p>Dilanjutkan dengan membuat database untuk wordpress dan user-user yang memiliki privileges berbeda dalam database wordpress tersebut.</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/22.png" class="img-responsive"></div>
+          <p>Lalu flush privileges dan keluar.</p>
+          <p class="tab">mysql> FLUSH PRIVILEGES;</p>
+          <h4>Menginstall Wordpress di Web Server</h4>
+          <p>Pertama, pindah ke direktori /tmp:</p>
+          <p class="tab">$ cd /tmp</p>
+          <p>Ini mengubah di direktori mana kita berada. Kemudian, masukkan perintah berikut untuk mengunduh WordPress versi terbaru sebagai file terkompresi:</p>
+          <p class="tab">$ wget https://wordpress.org/latest.tar.gz</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/23.png" class="img-responsive"></div>
+          <p>Ekstrak file terkompresi untuk membuat struktur direktori WordPress:</p>
+          <p class="tab">$ tar xzvf latest.tar.gz</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/24.png" class="img-responsive"></div>
+          <p>Salin seluruh isi direktori ke root dokumen. Flag -a akan memastikan izin dipertahankan, dan titik di akhir direktori sumber menunjukkan bahwa semua yang ada di dalam direktori harus disalin (termasuk file tersembunyi):</p>
+          <p>$ sudo cp -a /tmp/wordpress/ /var/www/html</p>
+          <p>Jalankan perintah di bawah ini untuk mengubah kepemilikan direktori 'wordpress' dan file permission.</p>
+          <p>$ sudo chown -R www-data:www-data /var/www/html/wordpress/</p>
+          <p>$ sudo chmod -R 755 /var/www/html/wordpress/</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/25.png" class="img-responsive"></div>
+          <p>Membuat direkori ‘uploads’ dan ubah izin direktorinya.<br>
+            <br>
+            $ mkdir /var/www/html/wordpress/wp-content/uploads<br>
+            $ sudo chown -R www-data:www-data /var/www/html/wordpress/wp-content/uploads</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/26.png" class="img-responsive"></div>
+          <p>$ sudo cp wp-config-sample.php wp-config.php <br>
+            $ sudo nano /var/www/html/wordpress/wp-config.php<br>
+            <br>
+          Untuk mengisi database name, username, password, dan database host. Isi sesuai yang kita gunakan, dimana database name adalah nama database yang kita buat tadi, db user adalah nama user yang dibuat tadi dan db password passwordnya, dan terakhir db host diisi dengan alamat ip database server.<br>
+          <br>
+          <br>
+            . . .<br>
+            /** The name of the database for WordPress */<br>
+            define('DB_NAME', 'database_yang_dibuat_tadi');<br>
+            <br>
+            /** MySQL database username */<br>
+            define('DB_USER', 'nama_user');<br>
+            <br>
+            /** MySQL database password */<br>
+            define('DB_PASSWORD', 'remote_user_password');<br>
+            <br>
+            /** MySQL hostname */<br>
+            define('DB_HOST', 'db_server_ip');<br>
+            . . .<br>
+            <br>
+          Setelah mengisi wp-config dengan benar, simpan dan keluar dari file seperti biasa. CTRL + X, Y, dan ENTER. Lalu, arahkan browser ke alamat ip yang terkait dengan web server anda diikuti dengan /wordpress:
+          <br><br>
+            http://alamat_ip_webserver/wordpress/wp-admin</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/27.png" class="img-responsive"></div>
+          <p>Klik Continue untuk melanjutkan setelah memilih Bahasa yang diinginkan namun diajurkan untuk menggunakan English.<br>
+            <br>
+            Akan diminta informasi untuk wordpress, isi sesuai dengan yang diminta. Jangan khawatir settingan disini bisa diganti nanti.</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/28.png" class="img-responsive"></div>
+          <p>Lalu install dan log-in.</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/29.png" class="img-responsive"></div>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/30.png" class="img-responsive"></div>
+          <p>Ini adalah dashboard wordpress, dari sini website bisa langsung dibuat.</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/31.png" class="img-responsive"></div>
+          <h4>Membuat 2 Database lainnya</h4>
+          <p>Membuat database untuk kedua websitenya</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/32.png" class="img-responsive"></div>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/33.png" class="img-responsive"></div>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/34.png" class="img-responsive"></div>
+          <p>Website wordpress database 2 :</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/35.png" class="img-responsive"></div>
+          <p>Website wordpress database 3 :</p>
+          <div class="col-md-12"><img src="img/posts/webserver database server terpisah/36.png" class="img-responsive"></div>
+
+          <!-- <a href="#portfolio" class="btn btn-default btn-lg page-scroll">Check out these posts</a> </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Portfolio Section -->
+<!--<div id="portfolio">
+  <div class="container">
+    <div class="section-title text-center center">
+      <h2>Posts</h2>
+      <hr>
+    </div>
+    <div class="categories">
+      <ul class="cat">
+        <li>
+          <ol class="type">
+            <li><a href="#" data-filter="*" class="active">All</a></li>
+            <li><a href="#" data-filter=".graphic">Graphic Design</a></li>
+            <li><a href="#" data-filter=".illustration">Illustration</a></li>
+            <li><a href="#" data-filter=".photography">Photography</a></li>
+          </ol>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <div class="row">
+      <div class="portfolio-items">
+        <div class="col-sm-6 col-md-3 col-lg-3 graphic">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/01-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/01-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 illustration">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/02-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/02-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 graphic">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/03-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/03-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 graphic">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/04-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/04-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 illustration">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/05-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/05-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 photography">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/06-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/06-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 photography">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/07-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/07-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 graphic">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/08-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/08-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 illustration">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/09-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/09-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 photography">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/10-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/10-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 photography">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/11-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/11-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 graphic">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/12-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/12-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+<!-- Contact Section -->
+<div id="contact" class="text-center">
+  <div class="container">
+    <div class="section-title center">
+      <h2>Get In Touch</h2>
+      <hr>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <a href="https://linktr.ee/riccig" target="_blank" class="btn btn-default btn-lg page-scroll">Contact Me</a>
+      <div class="social">
+        <ul>
+          <li><a href="https://linktr.ee/riccig" target="_blank"><i class="fa fa-users"></i></a></li>
+          <li><a href="https://twitter.com/damzesidn/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://www.instagram.com/ricci_dmz/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="https://paypal.me/damzes" target="_blank"><i class="fa fa-credit-card"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container text-center">
+    <div class="fnav">
+      <p>Copyright &copy; 2022 Ricci</p>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
+<script type="text/javascript" src="js/bootstrap.js"></script> 
+<script type="text/javascript" src="js/SmoothScroll.js"></script> 
+<script type="text/javascript" src="js/nivo-lightbox.js"></script> 
+<script type="text/javascript" src="js/jquery.isotope.js"></script> 
+<script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
+<script type="text/javascript" src="js/contact_me.js"></script> 
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
