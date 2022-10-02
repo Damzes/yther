@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Ricci</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Favicons
+    ================================================== -->
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+
+<!-- Stylesheet
+    ================================================== -->
+<link rel="stylesheet" type="text/css"  href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
+<link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!-- Header -->
+<header id="header">
+  <div class="intro">
+    <div class="container">
+      <div class="row">
+        <div class="intro-text">
+          <h1>Ricci</h1>
+          <hr>
+          <p>Cybersecurity • Programming • Gaming</p> </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Navigation -->
+<div id="nav">
+  <nav class="navbar navbar-custom">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
+      </div>
+      
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-main-collapse">
+        <ul class="nav navbar-nav">
+          <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+          <li class="hidden"> <a href="#page-top"></a> </li>
+          <li> <a class="page-scroll" href="index.html">Home</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- About Section -->
+<div id="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>MySQL Access Control List</h2>
+    </div>
+    <div class="row">
+      <div>
+        <div class="about-text">
+          <h4>Fundamental Access Control</h4>
+          <p>Pada keamanan informasi, kontrol akses sangat penting untuk memastikan kerahasiaan, integritas dan ketersediaan (CIA). Mengontrol siapa saja yang bisa mengakses ke sistem dan luasnya akses yang bisa dimiliki oleh pengguna dan sangat penting untuk memastikan dan mengamankan sistem dan data. <br>
+            <br>
+            Contohnya seperti user root memberikan atau membuat user yang bisa mengakses ke database kepada host yang diizinkan dan hak akses yang diberikan.<br>
+            <br>
+            Dengan perintah sebagai berikut :</p>
+            <code>CREATE USER player1@192.168.100.12 IDENTIFIED BY 'player1';</code>
+            <br>
+            <code>GRANT ALL ON MovieIndustry9.* TO player1@192.168.100.12;</code>
+            <div class="col-md-12"><img src="img/posts/mysqlacl/1.png" class="img-responsive"></div>
+            <p>Untuk pembuktian bahwa user tersebut hanya bisa mengkakses database yang diberikan hak akses saja, berikut gambar yang menampilkan daftar database pada user root, dan database pada player1
+              <br><br>
+              Adapun percobaannya seperti berikut:</p>
+              <div class="col-md-12"><img src="img/posts/mysqlacl/3.png" class="img-responsive"></div>
+              <div class="col-md-12"><img src="img/posts/mysqlacl/4.png" class="img-responsive"></div>
+              <p>Karena kita memberikan semua hak akses kepada player1, jadi untuk perintah create,read,update, dan delete bisa dijalankan oleh player1 .</p>
+            <div class="col-md-12"><img src="img/posts/mysqlacl/5.png" class="img-responsive"></div>
+          <h4>Mandatory Access Control</h4>
+          <p>Pada kemanan komputer Mandatory (wajib) Access Control (MAC) merupakan jenis akses kontrol dimana sistem operasi atau pada database yang membatasi kemampuan subjek atau inisiator (user) untuk mengakses atau pada umumnya melakukan operasi pada objek atau target biasanya pada database objeknya adalah tabel, kolom, tampilan dan lainnya. Pada dasarnya keamanan ini dikendalikan secara terpusat oleh administrator yang mengelola keamanan, jadi user lain tidak memiliki kemampuan untuk mengganti kebijakan.
+            <br><br>
+            Contohnya user yang tidak bisa mengakses database atau table yang telah ditentukan. Hanya root user yang bisa mengganti kebijakan.
+            <br><br>
+            Adapun perintahnya sebagai berikut.</p>
+          <code>CREATE USER player2@192.168.100.12 IDENTIFIED BY 'player2';</code>
+          <br>
+          <code>GRANT SELECT ON MovieIndustry9.* TO player2@192.168.100.12;</code><br>
+            <code>CREATE USER player3@192.168.100.12 IDENTIFIED BY 'player3';</code>
+            <br>
+            <code>GRANT SELECT ON MovieIndustry9.(satu table) TO player3@192.168.100.12;</code>
+            <div class="col-md-12"><img src="img/posts/mysqlacl/6.png" class="img-responsive"></div>
+            <p>Dalam hal ini player2 hanya bisa menggunakan perintah SELECT pada setiap tabel di database MovieIndustry9 dan player3 hanya bisa untuk menggunakan perintah select atau read pada tabel Movie di database MovieIndustry9.</p>
+            <p>Pada player2 saya akan memberikan beberapa perintah, seperti :
+            <br><br>
+            1. Select</p>
+            <div class="col-md-12"><img src="img/posts/mysqlacl/7.png" class="img-responsive"></div>
+          <p>Hal ini bisa dilakukan karena hak aksesnya adalah select, jika saya menggunakan perintah create maka tidak akan bisa dilakukan, seperti contoh pada dibawah ini.
+            <br><br>
+            2. Create</p>
+            <div class="col-md-12"><img src="img/posts/mysqlacl/8.png" class="img-responsive"></div>
+          <p>Hal ini tidak bisa dilakukan dikarenakan player2 tidak memiliki izin untuk melakukan hak akses create
+            <br><br>
+            Untuk player3 ini hanya bisa mengakses tabel Movie.</p>
+            <div class="col-md-12"><img src="img/posts/mysqlacl/9.png" class="img-responsive"></div>
+          <h4>Discreationary Access Control</h4>
+            <p>Kontrol akses diskresi (DAC) merupakan jenis kontrol akses yang ditentukan oleh Trusted Computer System Evaluation Criteria (TCSEC) sebagai sarana untuk membatasi akses ke objek berdasarkan identitas subjek atau kelompok mereka, dengan arti subjek dengan akses tertentu bisa meneruskan izin yang diberikan dan bisa meneruskan ke subjek lain ( kecuali ditahan oleh MAC).
+              <br><br>
+              Contoh ada 3 user dimana user 1 hanya untuk CRU user 2 CRUD player3 hanya R. di mana CRUD artinya Create, Read, Update, dan Delete.
+              <br><br>
+              Adapun perintahnya sebagai berikut.</p>
+            <code>CREATE USER player1@192.168.100.12 IDENTIFIED BY 'player1';</code>
+            <br>
+            <code>GRANT CREATE,INSERT,SELECT,UPDATE, ON ujicoba.* TO player1@192.168.100.12;</code>
+            <br>
+            <code>CREATE USER player2@192.168.100.12 IDENTIFIED BY 'player2';</code>
+            <br>
+            <code>GRANT CREATE,INSERT,SELECT,UPDATE, ON ujicoba.* TO player2@192.168.100.12;</code>
+            <br>
+            <code>CREATE USER player3@192.168.100.12 IDENTIFIED BY 'player3';</code>
+            <br>
+            <code>GRANT CREATE,INSERT,SELECT,UPDATE, ON ujicoba.* TO player3@192.168.100.12;</code>
+            <div class="col-md-12"><img src="img/posts/mysqlacl/10.png" class="img-responsive"></div>
+            <p>Contoh implementasinya sebagai berikut.
+              </p>
+              <h5>player1</h5>
+              <p>player1 hanya bisa melakukan create insert, select dan update. Penerapan create dan insert
+              <br><br>
+              Contoh implementasi create, insert, select, dan update.</p>
+              <div class="col-md-12"><img src="img/posts/mysqlacl/11.png" class="img-responsive"></div>
+              <div class="col-md-12"><img src="img/posts/mysqlacl/12.png" class="img-responsive"></div>
+              <p>Perintah DELETE gagal karena player1 tidak diberi privilege untuk melakukannya.</p>
+              <h5>player2</h5>
+              <p>User 2 bisa melakukan create, insert,select, update dan delete atau CRUD.
+                <br><br>
+                Contoh implementasi DELETE & SELECT</p>
+                <div class="col-md-12"><img src="img/posts/mysqlacl/13.png" class="img-responsive"></div>
+              <p>Contoh implementasi CREATE, INSERT, & SELECT</p>
+              <div class="col-md-12"><img src="img/posts/mysqlacl/14.png" class="img-responsive"></div>
+              <p>Contoh implementasi SELECT & UPDATE</p>
+              <div class="col-md-12"><img src="img/posts/mysqlacl/15.png" class="img-responsive"></div>
+              <h5>player3</h5>
+              <p>player3 hanya bisa melakukan select saja atau hanya untuk Read (membaca) data.
+                <br><br>
+                Contoh implementasi SELECT, CREATE, INSERT, DROP, & UPDATE</p>
+                <div class="col-md-12"><img src="img/posts/mysqlacl/16.png" class="img-responsive"></div>
+              <p>Player3 hanya bisa menjalankan perintah SELECT karena hanya itu wewenang yang dimilikinya</p>
+
+          <!-- <a href="#portfolio" class="btn btn-default btn-lg page-scroll">Check out these posts</a> </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Portfolio Section -->
+<!--<div id="portfolio">
+  <div class="container">
+    <div class="section-title text-center center">
+      <h2>Posts</h2>
+      <hr>
+    </div>
+    <div class="categories">
+      <ul class="cat">
+        <li>
+          <ol class="type">
+            <li><a href="#" data-filter="*" class="active">All</a></li>
+            <li><a href="#" data-filter=".graphic">Graphic Design</a></li>
+            <li><a href="#" data-filter=".illustration">Illustration</a></li>
+            <li><a href="#" data-filter=".photography">Photography</a></li>
+          </ol>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <div class="row">
+      <div class="portfolio-items">
+        <div class="col-sm-6 col-md-3 col-lg-3 graphic">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/01-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/01-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 illustration">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/02-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/02-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 graphic">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/03-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/03-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 graphic">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/04-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/04-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 illustration">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/05-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/05-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 photography">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/06-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/06-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 photography">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/07-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/07-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 graphic">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/08-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/08-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 illustration">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/09-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/09-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 photography">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/10-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/10-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 photography">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/11-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/11-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3 graphic">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/12-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Project Title</h4>
+              </div>
+              <img src="img/portfolio/12-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+<!-- Contact Section -->
+<div id="contact" class="text-center">
+  <div class="container">
+    <div class="section-title center">
+      <h2>Get In Touch</h2>
+      <hr>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <a href="https://linktr.ee/riccig" target="_blank" class="btn btn-default btn-lg page-scroll">Contact Me</a>
+      <div class="social">
+        <ul>
+          <li><a href="https://linktr.ee/riccig" target="_blank"><i class="fa fa-users"></i></a></li>
+          <li><a href="https://twitter.com/damzesidn/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://www.instagram.com/ricci_dmz/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="https://paypal.me/damzes" target="_blank"><i class="fa fa-credit-card"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container text-center">
+    <div class="fnav">
+      <p>Copyright &copy; 2022 Ricci</p>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
+<script type="text/javascript" src="js/bootstrap.js"></script> 
+<script type="text/javascript" src="js/SmoothScroll.js"></script> 
+<script type="text/javascript" src="js/nivo-lightbox.js"></script> 
+<script type="text/javascript" src="js/jquery.isotope.js"></script> 
+<script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
+<script type="text/javascript" src="js/contact_me.js"></script> 
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
